@@ -27,15 +27,17 @@ The pipeline includes the following main steps:
    * Comprehensive quality assessment of raw sequencing reads
 2. Concatenate FASTQs ([`cat`](https://man7.org/linux/man-pages/man1/cat.1.html))
    * Combines multiple FASTQ files for the same sample
-3.1. Mapping ([`BWA-Meth`](https://github.com/brentp/bwa-meth))
-   * Alignment of bisulfite-converted reads to reference genome
-3.2. Mapping ([`BWA mem2`](https://https://github.com/bwa-mem2/bwa-mem2))
+3. Mapping
+3.1. Mapping with ([`BWA-Meth`](https://github.com/brentp/bwa-meth))
+   * Alignment of bisulfite-converted reads to reference genome `OR`
+3.2. Mapping with ([`BWA mem2`](https://https://github.com/bwa-mem2/bwa-mem2))
    * The next version of bwa-mem
 4. Mark Duplicates ([`GATK4-MarkDuplicates`](https://gatk.broadinstitute.org/hc/en-us/articles/13832748517275-MarkDuplicates-Picard))
    * Identification and marking of PCR duplicates
-5.1 Methylation Calling ([`rasTair`](https://bitbucket.org/bsblabludwig/rastair/src/master/))
+5. Methylation Calling
+5.1 Methylation Calling with ([`rasTair`](https://bitbucket.org/bsblabludwig/rastair/src/master/))
    * Extraction of methylation calls from aligned reads
-5.2 Methylation Calling ([`asTair`](https://bitbucket.org/bsblabludwig/astair/src/master/))
+5.2 Methylation Calling with ([`asTair`](https://bitbucket.org/bsblabludwig/astair/src/master/))
    * Extraction of methylation calls from aligned reads
 6. MultiQC ([`MultiQC`](https://multiqc.info/))
    * Aggregation of all QC reports into a single dashboard
@@ -122,4 +124,3 @@ This pipeline uses code and infrastructure developed and maintained by the [nf-c
 > Philip Ewels, Alexander Peltzer, Sven Fillinger, Harshil Patel, Johannes Alneberg, Andreas Wilm, Maxime Ulysse Garcia, Paolo Di Tommaso & Sven Nahnsen.
 >
 > _Nat Biotechnol._ 2020 Feb 13. doi: [10.1038/s41587-020-0439-x](https://dx.doi.org/10.1038/s41587-020-0439-x).
-
